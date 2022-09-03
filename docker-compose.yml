@@ -2,9 +2,6 @@ version: "3.9"
 services:
   dcem:
     build: ./dcem
-    ports:
-      - "443:443"
-      - "8443:8443"
     volumes:
       - dcem-data:/opt/DCEM/DCEM_HOME
   mariadb:
