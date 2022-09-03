@@ -4,7 +4,7 @@ LABEL maintainer="Phizzl <the@phizzl.it>"
 ARG DCEM_VERSION=2.7.3
 
 RUN apt-get -yq update \
-    && apt-get -yq install unzip supervisor python3-pip wget \
+    && apt-get -yq install unzip supervisor python3-pip wget openjdk-8-jre \
     && apt-get -yq clean all \
     && pip install xq \
     && rm -rf /var/lib/apt/lists/*
