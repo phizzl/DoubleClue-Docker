@@ -15,6 +15,8 @@ RUN cd /opt \
     && tar xfz DCEM-Linux-${DCEM_VERSION}.tar.gz \
     && rm DCEM-Linux-${DCEM_VERSION}.tar.gz DCEM-Linux-${DCEM_VERSION}.zip
 
+RUN find /opt/DCEM/jvm/bin -type f -exec bash -c "rm {}; ln -sv \$(which \$(basename {})) {};" \;
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY supervisord-wrapper.sh /opt/dcem-supervisord-wrapper.sh
 
